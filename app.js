@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = require ('./Routes/route')
+const cors = require("cors")
 
 const app = express();
 app.use(express.urlencoded({extended: true})); // form
 app.use(express.json()); 
-
+app.use(cors())
 const corsOption = {
     origin:process.env.FRONTED_URL
 }
